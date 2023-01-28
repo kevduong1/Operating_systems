@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/test/hw1/strings/include/sstring.h
+stdbool.h
+-
+
+/homes/kevduong/test/hw1/strings/test/tests.cpp
+stdio.h
+-
+stdlib.h
+-
+../include/sstring.h
+/homes/kevduong/test/hw1/strings/include/sstring.h
+gtest/gtest.h
+-
+
