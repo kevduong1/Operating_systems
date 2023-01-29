@@ -113,8 +113,6 @@ bool string_to_int(const char *str, int *converted_value)
         old_res = res;
     }
 
-
-
     *converted_value = res;
     return true;
 }

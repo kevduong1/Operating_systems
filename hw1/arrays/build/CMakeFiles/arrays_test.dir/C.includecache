@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/Operating_systems/hw1/arrays/include/arrays.h
+stdbool.h
+-
+stddef.h
+-
+sys/types.h
+-
+
+/homes/kevduong/Operating_systems/hw1/arrays/src/arrays.c
+string.h
+-
+stdlib.h
+-
+stdio.h
+-
+../include/arrays.h
+/homes/kevduong/Operating_systems/hw1/arrays/include/arrays.h
+
