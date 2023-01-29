@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/homes/kevduong/test/hw1/strings/include/sstring.h
+/homes/kevduong/Operating_systems/hw1/strings/include/sstring.h
 stdbool.h
 -
 
-/homes/kevduong/test/hw1/strings/src/sstring.c
+/homes/kevduong/Operating_systems/hw1/strings/src/sstring.c
 string.h
 -
 errno.h
@@ -24,5 +24,5 @@ stddef.h
 stdint.h
 -
 ../include/sstring.h
-/homes/kevduong/test/hw1/strings/include/sstring.h
+/homes/kevduong/Operating_systems/hw1/strings/include/sstring.h
 

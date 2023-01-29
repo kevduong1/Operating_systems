@@ -43,10 +43,10 @@ RM = /opt/software/software/CMake/3.16.4-GCCcore-9.3.0/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/kevduong/test/hw1/strings
+CMAKE_SOURCE_DIR = /homes/kevduong/Operating_systems/hw1/strings
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/kevduong/test/hw1/strings/build
+CMAKE_BINARY_DIR = /homes/kevduong/Operating_systems/hw1/strings/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/strings_test.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/strings_test.dir/flags.make
 
 CMakeFiles/strings_test.dir/test/tests.cpp.o: CMakeFiles/strings_test.dir/flags.make
 CMakeFiles/strings_test.dir/test/tests.cpp.o: ../test/tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/kevduong/test/hw1/strings/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/strings_test.dir/test/tests.cpp.o"
-	/opt/software/software/GCCcore/9.3.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/strings_test.dir/test/tests.cpp.o -c /homes/kevduong/test/hw1/strings/test/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/strings_test.dir/test/tests.cpp.o"
+	/opt/software/software/GCCcore/9.3.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/strings_test.dir/test/tests.cpp.o -c /homes/kevduong/Operating_systems/hw1/strings/test/tests.cpp
 
 CMakeFiles/strings_test.dir/test/tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/strings_test.dir/test/tests.cpp.i"
-	/opt/software/software/GCCcore/9.3.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/kevduong/test/hw1/strings/test/tests.cpp > CMakeFiles/strings_test.dir/test/tests.cpp.i
+	/opt/software/software/GCCcore/9.3.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/kevduong/Operating_systems/hw1/strings/test/tests.cpp > CMakeFiles/strings_test.dir/test/tests.cpp.i
 
 CMakeFiles/strings_test.dir/test/tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/strings_test.dir/test/tests.cpp.s"
-	/opt/software/software/GCCcore/9.3.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/kevduong/test/hw1/strings/test/tests.cpp -o CMakeFiles/strings_test.dir/test/tests.cpp.s
+	/opt/software/software/GCCcore/9.3.0/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/kevduong/Operating_systems/hw1/strings/test/tests.cpp -o CMakeFiles/strings_test.dir/test/tests.cpp.s
 
 CMakeFiles/strings_test.dir/src/sstring.c.o: CMakeFiles/strings_test.dir/flags.make
 CMakeFiles/strings_test.dir/src/sstring.c.o: ../src/sstring.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/kevduong/test/hw1/strings/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/strings_test.dir/src/sstring.c.o"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/strings_test.dir/src/sstring.c.o   -c /homes/kevduong/test/hw1/strings/src/sstring.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/strings_test.dir/src/sstring.c.o"
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/strings_test.dir/src/sstring.c.o   -c /homes/kevduong/Operating_systems/hw1/strings/src/sstring.c
 
 CMakeFiles/strings_test.dir/src/sstring.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/strings_test.dir/src/sstring.c.i"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/kevduong/test/hw1/strings/src/sstring.c > CMakeFiles/strings_test.dir/src/sstring.c.i
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/kevduong/Operating_systems/hw1/strings/src/sstring.c > CMakeFiles/strings_test.dir/src/sstring.c.i
 
 CMakeFiles/strings_test.dir/src/sstring.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/strings_test.dir/src/sstring.c.s"
-	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/kevduong/test/hw1/strings/src/sstring.c -o CMakeFiles/strings_test.dir/src/sstring.c.s
+	/opt/software/software/GCCcore/9.3.0/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/kevduong/Operating_systems/hw1/strings/src/sstring.c -o CMakeFiles/strings_test.dir/src/sstring.c.s
 
 # Object files for target strings_test
 strings_test_OBJECTS = \
@@ -95,7 +95,7 @@ strings_test: CMakeFiles/strings_test.dir/test/tests.cpp.o
 strings_test: CMakeFiles/strings_test.dir/src/sstring.c.o
 strings_test: CMakeFiles/strings_test.dir/build.make
 strings_test: CMakeFiles/strings_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/kevduong/test/hw1/strings/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable strings_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable strings_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/strings_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/strings_test.dir/clean:
 .PHONY : CMakeFiles/strings_test.dir/clean
 
 CMakeFiles/strings_test.dir/depend:
-	cd /homes/kevduong/test/hw1/strings/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/kevduong/test/hw1/strings /homes/kevduong/test/hw1/strings /homes/kevduong/test/hw1/strings/build /homes/kevduong/test/hw1/strings/build /homes/kevduong/test/hw1/strings/build/CMakeFiles/strings_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/kevduong/Operating_systems/hw1/strings/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/kevduong/Operating_systems/hw1/strings /homes/kevduong/Operating_systems/hw1/strings /homes/kevduong/Operating_systems/hw1/strings/build /homes/kevduong/Operating_systems/hw1/strings/build /homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/strings_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/strings_test.dir/depend
 

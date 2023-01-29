@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/homes/kevduong/test/hw1/strings/src/sstring.c" "/homes/kevduong/test/hw1/strings/build/CMakeFiles/strings_test.dir/src/sstring.c.o"
+  "/homes/kevduong/Operating_systems/hw1/strings/src/sstring.c" "/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/strings_test.dir/src/sstring.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -13,7 +13,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/homes/kevduong/test/hw1/strings/test/tests.cpp" "/homes/kevduong/test/hw1/strings/build/CMakeFiles/strings_test.dir/test/tests.cpp.o"
+  "/homes/kevduong/Operating_systems/hw1/strings/test/tests.cpp" "/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/strings_test.dir/test/tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

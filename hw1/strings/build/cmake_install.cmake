@@ -1,4 +1,4 @@
-# Install script for directory: /homes/kevduong/test/hw1/strings
+# Install script for directory: /homes/kevduong/Operating_systems/hw1/strings
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/homes/kevduong/test/hw1/strings/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/homes/kevduong/Operating_systems/hw1/strings/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

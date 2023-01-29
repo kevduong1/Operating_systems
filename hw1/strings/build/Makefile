@@ -48,10 +48,10 @@ RM = /opt/software/software/CMake/3.16.4-GCCcore-9.3.0/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/kevduong/test/hw1/strings
+CMAKE_SOURCE_DIR = /homes/kevduong/Operating_systems/hw1/strings
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/kevduong/test/hw1/strings/build
+CMAKE_BINARY_DIR = /homes/kevduong/Operating_systems/hw1/strings/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /homes/kevduong/test/hw1/strings/build/CMakeFiles /homes/kevduong/test/hw1/strings/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles /homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /homes/kevduong/test/hw1/strings/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
