@@ -68,7 +68,12 @@ bool array_serialize(const void *src_data, const char *dst_file, const size_t el
     fclose(file);
     return true;
 }
-
+// Reads an array from a binary file
+// \param src_file the source file that contains the array to be read into the destination array
+// \param dst_data the array that will contain the data stored inthe source file
+// \param elem_size the number of bytes each array element uses of the destination array
+// \param elem_count the number of elements in the destination array
+// return true if operation was successful, else false
 bool array_deserialize(const char *src_file, void *dst_data, const size_t elem_size, const size_t elem_count)
 {
     if(src_file == NULL || dst_data == NULL || elem_size == 0 || elem_count == 0 || src_file[0] == '\n') return false;
@@ -78,27 +83,12 @@ bool array_deserialize(const char *src_file, void *dst_data, const size_t elem_s
         return false;
     }
 
-    int *int_array = (int *)dst_data;
-    size_t i = 0;
-    int ch;
-    while ((ch = fgetc(fp)) != EOF)
-    {
-        if (ch >= '0' && ch <= '9')
-        {
-            ungetc(ch, fp);
-            if (fscanf(fp, "%d", &int_array[i]) != 1)
-            {
-                fclose(fp);
-                return false;
-            }
-            i++;
-            if (i >= elem_count)
-            {
-                break;
-            }
-        }
-    }
+    size_t bytes_read = fread(dst_data, elem_size, elem_count, fp);
     fclose(fp);
+    if (bytes_read != elem_count) {
+        return false;
+    }
     return true;
+
 }
 
