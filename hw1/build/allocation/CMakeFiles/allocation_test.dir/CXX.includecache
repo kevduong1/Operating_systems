@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/Operating_systems/hw1/allocation/include/allocation.h
+stdbool.h
+-
+stddef.h
+-
+
+/homes/kevduong/Operating_systems/hw1/allocation/test/tests.cpp
+stdlib.h
+-
+stdio.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+../include/allocation.h
+/homes/kevduong/Operating_systems/hw1/allocation/include/allocation.h
+gtest/gtest.h
+-
+

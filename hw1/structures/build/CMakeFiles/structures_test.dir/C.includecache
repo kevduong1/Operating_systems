@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/Operating_systems/hw1/structures/include/structures.h
+stdlib.h
+-
+
+/homes/kevduong/Operating_systems/hw1/structures/src/structures.c
+../include/structures.h
+/homes/kevduong/Operating_systems/hw1/structures/include/structures.h
+stdio.h
+-
+

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/Operating_systems/hw1/debug/include/debug.h
+stdint.h
+-
+stddef.h
+-
+stdbool.h
+-
+
+/homes/kevduong/Operating_systems/hw1/debug/src/debug.c
+../include/debug.h
+/homes/kevduong/Operating_systems/hw1/debug/include/debug.h
+stdlib.h
+-
+string.h
+-
+stdint.h
+-
+

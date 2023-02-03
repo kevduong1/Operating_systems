@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/Operating_systems/hw1/bits/include/bitmap.h
+stdint.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+/homes/kevduong/Operating_systems/hw1/bits/src/bitmap.c
+../include/bitmap.h
+/homes/kevduong/Operating_systems/hw1/bits/include/bitmap.h
+

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "allocation.h": "c",
+        "structures.h": "c"
+    }
+}

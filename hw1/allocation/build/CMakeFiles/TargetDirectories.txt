@@ -1,0 +1,3 @@
+/homes/kevduong/Operating_systems/hw1/allocation/build/CMakeFiles/rebuild_cache.dir
+/homes/kevduong/Operating_systems/hw1/allocation/build/CMakeFiles/allocation_test.dir
+/homes/kevduong/Operating_systems/hw1/allocation/build/CMakeFiles/edit_cache.dir

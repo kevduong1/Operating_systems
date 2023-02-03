@@ -1,0 +1,4 @@
+/homes/kevduong/Operating_systems/hw1/structures/build/CMakeFiles/rebuild_cache.dir
+/homes/kevduong/Operating_systems/hw1/structures/build/CMakeFiles/edit_cache.dir
+/homes/kevduong/Operating_systems/hw1/structures/build/CMakeFiles/structures_test.dir
+/homes/kevduong/Operating_systems/hw1/structures/build/CMakeFiles/test.dir

@@ -1,0 +1,1 @@
+/opt/software/software/GCCcore/9.3.0/bin/c++  -std=c++0x -g -Wall -Werror   CMakeFiles/allocation_test.dir/test/tests.cpp.o CMakeFiles/allocation_test.dir/src/allocation.c.o  -o allocation_test  -lgtest -lpthread 

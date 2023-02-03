@@ -1,0 +1,1 @@
+/opt/software/software/GCCcore/9.3.0/bin/c++  -std=c++0x -Wall -Werror -g   CMakeFiles/arrays_test.dir/test/tests.cpp.o CMakeFiles/arrays_test.dir/src/arrays.c.o  -o arrays_test  -lgtest -lpthread 

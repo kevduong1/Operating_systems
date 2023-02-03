@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/kevduong/Operating_systems/hw1/system_programming/include/sys_prog.h
+stdbool.h
+-
+stddef.h
+-
+sys/types.h
+-
+stdint.h
+-
+unistd.h
+-
+
+/homes/kevduong/Operating_systems/hw1/system_programming/test/tests.cpp
+stdio.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+../include/sys_prog.h
+/homes/kevduong/Operating_systems/hw1/system_programming/include/sys_prog.h
+gtest/gtest.h
+-
+
