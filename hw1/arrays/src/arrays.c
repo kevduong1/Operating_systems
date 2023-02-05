@@ -14,11 +14,12 @@
 // return true if operation was successful, else false
 bool array_copy(const void *src, void *dst, const size_t elem_size, const size_t elem_count)
 {
-    if(src == NULL || dst == NULL || elem_size == 0 || elem_count == 0) return false;
+    if (src == NULL || dst == NULL || elem_size == 0 || elem_count == 0)
+        return false;
 
-    for(size_t i = 0; i < elem_count; i++)
+    for (size_t i = 0; i < elem_count; i++)
     {
-        *(char*)(dst + (i * elem_size)) = *(const char*)(src + (i*elem_size));
+        *(char *)(dst + (i * elem_size)) = *(const char *)(src + (i * elem_size));
     }
     return true;
 }
@@ -31,23 +32,34 @@ bool array_copy(const void *src, void *dst, const size_t elem_size, const size_t
 // return true if operation was successful, else false
 bool array_is_equal(const void *data_one, void *data_two, const size_t elem_size, const size_t elem_count)
 {
-    if(data_one == NULL || data_two == NULL || elem_size == 0 || elem_count == 0) return false;
+    if (data_one == NULL || data_two == NULL || elem_size == 0 || elem_count == 0)
+        return false;
 
-    for (size_t i = 0; i < elem_count; i++) {
-        if (memcmp(data_one + i * elem_size, data_two + i * elem_size, elem_size) != 0) {
+    for (size_t i = 0; i < elem_count; i++)
+    {
+        if (memcmp(data_one + i * elem_size, data_two + i * elem_size, elem_size) != 0)
+        {
             return false;
         }
     }
     return true;
 }
 
+// Attempts to locate the target from an array
+// \param data the data that may contain the target
+// \param target the target that may be in the data
+// \param elem_size the number of bytes each array element uses and same as the target
+// \param elem_count the number of elements in the data array
+// returns an index to the located target, else return -1 for failure
 ssize_t array_locate(const void *data, const void *target, const size_t elem_size, const size_t elem_count)
 {
-    if(data == NULL || target == NULL || elem_size == 0 || elem_count == 0) return -1;
+    if (data == NULL || target == NULL || elem_size == 0 || elem_count == 0)
+        return -1;
 
-    for(size_t i = 0; i < elem_count; i++)
+    for (size_t i = 0; i < elem_count; i++)
     {
-        if (memcmp((char*)data + (i * elem_size), target, elem_size) == 0) {
+        if (memcmp((char *)data + (i * elem_size), target, elem_size) == 0)
+        {
             return i;
         }
     }
@@ -55,15 +67,24 @@ ssize_t array_locate(const void *data, const void *target, const size_t elem_siz
     return -1;
 }
 
+// Writes an array into a binary file
+// \param src_data the array the will be wrote into the destination file
+// \param dst_file the file that will contain the wrote src_data
+// \param elem_size the number of bytes each array element uses
+// \param elem_count the number of elements in the source array
+// return true if operation was successful, else false
 bool array_serialize(const void *src_data, const char *dst_file, const size_t elem_size, const size_t elem_count)
 {
-    if(src_data == NULL || dst_file == NULL || elem_size == 0 || elem_count == 0 || dst_file[0] == '\n') return false;
+    if (src_data == NULL || dst_file == NULL || elem_size == 0 || elem_count == 0 || dst_file[0] == '\n')
+        return false;
 
     FILE *file = fopen(dst_file, "wb");
-    if(file == NULL) return false;
+    if (file == NULL)
+        return false;
 
-    for(size_t i = 0; i < elem_count; i++) {
-        fwrite((char*)src_data + (i * elem_size), elem_size, 1, file);
+    for (size_t i = 0; i < elem_count; i++)
+    {
+        fwrite((char *)src_data + (i * elem_size), elem_size, 1, file);
     }
     fclose(file);
     return true;
@@ -76,7 +97,8 @@ bool array_serialize(const void *src_data, const char *dst_file, const size_t el
 // return true if operation was successful, else false
 bool array_deserialize(const char *src_file, void *dst_data, const size_t elem_size, const size_t elem_count)
 {
-    if(src_file == NULL || dst_data == NULL || elem_size == 0 || elem_count == 0 || src_file[0] == '\n') return false;
+    if (src_file == NULL || dst_data == NULL || elem_size == 0 || elem_count == 0 || src_file[0] == '\n')
+        return false;
     FILE *fp = fopen(src_file, "r");
     if (fp == NULL)
     {
@@ -85,10 +107,9 @@ bool array_deserialize(const char *src_file, void *dst_data, const size_t elem_s
 
     size_t bytes_read = fread(dst_data, elem_size, elem_count, fp);
     fclose(fp);
-    if (bytes_read != elem_count) {
+    if (bytes_read != elem_count)
+    {
         return false;
     }
     return true;
-
 }
-

@@ -8,17 +8,18 @@
 /// \param size_t - number of members in the array
 ///	\param bool -   1 will clear memory (calling calloc), 0 will not (calling malloc).
 /// \return void* - pointer to allocated memory.
-void* allocate_array(size_t member_size, size_t nmember,bool clear)
+void *allocate_array(size_t member_size, size_t nmember, bool clear)
 {
-    if((int)nmember <= 0) return NULL;
+    if ((int)nmember <= 0)
+        return NULL;
 
     void *ptr;
-    if(clear)
+    if (clear)
     {
         ptr = calloc(nmember, member_size);
     }
     else
-    {   
+    {
         ptr = malloc(member_size);
     }
 
@@ -35,48 +36,69 @@ void* allocate_array(size_t member_size, size_t nmember,bool clear)
 /// \param void* - pointer to memory to resize.
 /// \param size_t - size of memory to allocate
 /// \return void* - pointer to reallocated memory region, may be same as original pointer.
-void* reallocate_array(void* ptr, size_t size)
+void *reallocate_array(void *ptr, size_t size)
 {
-    if(size == 0) return NULL;
-    if(ptr == NULL) return malloc(size);
+    if (size == 0)
+        return NULL;
+    if (ptr == NULL)
+        return malloc(size);
     return realloc(ptr, size);
 }
+// Free
+// - Should not be called on a null pointer or a pointer not received from allocation.
+// - Free does not reinitialize the memory region.
+// - An "Invalid Pointer" error may be a sign of bad memory operations or an overflow from a memset, memcpy, or allocation or freeing a pointer twice.
+// - If the received pointer is null no operation is performed.
 
-void deallocate_array(void** ptr)
+/// Wrapper around free. Frees memory and sets received pointer to NULL.
+/// \param void* - pointer to memory to free.
+/// \return Nothing
+void deallocate_array(void **ptr)
 {
-  // If the received pointer is null, do nothing
-  if (!ptr || !*ptr) return;
+    if (!ptr || !*ptr)
+        return;
 
-  // Free the memory and set the pointer to NULL
-  free(*ptr);
-  *ptr = NULL;
+    free(*ptr);
+    *ptr = NULL;
 }
 
-char* read_line_to_buffer(char* filename)
-{
-    // Open the file
-    FILE* file = fopen(filename, "r");
-    if (!file) return NULL;
+// Heap & Stack
+// - Local variables are allocated on the stack
+// - Large local variable can overflow the stack as stack space is limited (the stack is shared with the functions your program calls as well)
+// - When a stack variable leaves scope it is popped from the stack meaning you cannot return a local variable (stack variable) from a function.
+// - Heap variables are allocated in memory (or in other places, e.g. using MMAP)
+// - Heap variables can be vastly larger than stack variables
+// - A heap variable remains available until it is freed, it is the programmers job to do so.
+// - A heap variable that is not freed results in a memory leak, such leaks can be found using valgrind.
+// - An overflow of the heap can cause serious issues in other parts of the program that may not be easily found. Such issues can usually be found with valgrind -v
+// - Allocation of stack variables is faster as you only need to alter the stack pointer.
 
-    // Determine the length of the file
+/// Takes a file name and reads a line into a newly allocated buffer
+/// \param char* - filename to read from
+/// \return char* - Pointer to malloced heap space containing buffer
+char *read_line_to_buffer(char *filename)
+{
+    FILE *file = fopen(filename, "r");
+    if (!file)
+        return NULL;
+
     fseek(file, 0, SEEK_END);
     size_t len = ftell(file);
     fseek(file, 0, SEEK_SET);
 
-    // Allocate memory for the buffer on the heap
-    char* buffer = malloc(len + 1);
-    if (!buffer) {
-    fclose(file);
-    return NULL;
+    char *buffer = malloc(len + 1);
+    if (!buffer)
+    {
+        fclose(file);
+        return NULL;
     }
 
-    // Read a line from the file into the buffer
-    if (!fgets(buffer, len + 1, file)) {
-    free(buffer);
-    buffer = NULL;
+    if (!fgets(buffer, len + 1, file))
+    {
+        free(buffer);
+        buffer = NULL;
     }
 
-    // Close the file and return the buffer
     fclose(file);
     return buffer;
 }

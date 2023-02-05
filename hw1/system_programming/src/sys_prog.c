@@ -23,30 +23,25 @@
 // return true if operation was successful, else false
 bool bulk_read(const char *input_filename, void *dst, const size_t offset, const size_t dst_size)
 {
-    if(input_filename == NULL || dst == NULL || dst_size == 0 || *input_filename == '\n' || *input_filename == '\0' || offset > dst_size) return false;
+    if (input_filename == NULL || dst == NULL || dst_size == 0 || *input_filename == '\n' || *input_filename == '\0' || offset > dst_size)
+        return false;
 
-    // Open the file specified by input_filename in read-only mode
     int file_desc = open(input_filename, O_RDONLY);
 
-    // return false if file could not be opened
-    if (file_desc == -1) return false;
+    if (file_desc == -1)
+        return false;
 
-    // Set the position of the file descriptor to the offset specified in the arguments
-    if (lseek(file_desc, offset, SEEK_SET) == -1) 
+    if (lseek(file_desc, offset, SEEK_SET) == -1)
     {
         close(file_desc);
         return false;
     }
 
-    // Read dst_size bytes from the file starting from the offset position
-    // and store them in the memory location pointed to by dst
     size_t bytes_read = read(file_desc, dst, dst_size);
     close(file_desc);
 
-    // return if the number of bytes read is the same as the number of bytes requested to be read (dst_size)
     return bytes_read == dst_size;
 }
-
 
 // Writes contents from the data source into the outputfile
 // \param src the source of the data to be wrote to the output_filename
@@ -56,27 +51,24 @@ bool bulk_read(const char *input_filename, void *dst, const size_t offset, const
 // return true if operation was successful, else false
 bool bulk_write(const void *src, const char *output_filename, const size_t offset, const size_t src_size)
 {
-    if(src == NULL || output_filename == NULL || src_size == 0 || *output_filename == '\n' || *output_filename == '\0' || strlen(output_filename) == 0) return false;
+    if (src == NULL || output_filename == NULL || src_size == 0 || *output_filename == '\n' || *output_filename == '\0' || strlen(output_filename) == 0)
+        return false;
 
-    // Open the file specified by output_filename in write-only mode
     int file_desc = open(output_filename, O_WRONLY);
-    
-    // return false if file could not be opened
-    if(file_desc == -1) return false;
-    
-    // Set the position of the file descriptor to the offset specified in the arguments
-    if (lseek(file_desc, offset, SEEK_SET) == -1) 
+
+    if (file_desc == -1)
+        return false;
+
+    if (lseek(file_desc, offset, SEEK_SET) == -1)
     {
         close(file_desc);
         return false;
     }
-    // write the contents of src to the file. Write src_size number of bytes
+
     ssize_t written_bytes = write(file_desc, src, src_size);
-    
-    // Close the file descriptor
+
     close(file_desc);
-    
-    //returns true if written bytes are equal to src_size, else false
+
     return written_bytes == src_size;
 }
 
@@ -86,18 +78,18 @@ bool bulk_write(const void *src, const char *output_filename, const size_t offse
 // return true if operation was successful, else false
 bool file_stat(const char *query_filename, struct stat *metadata)
 {
-    // Open the file specified by query_filename
+
     int file_desc = open(query_filename, O_RDONLY);
-    
-    // If the open call fails, return false
-    if(file_desc == -1) return false;
-    
-    // Get the metadata of the file using the fstat system call
-    if (fstat(file_desc, metadata) == -1) {
+
+    if (file_desc == -1)
+        return false;
+
+    if (fstat(file_desc, metadata) == -1)
+    {
         close(file_desc);
         return false;
     }
-    // Close the file descriptor
+
     close(file_desc);
     return true;
 }
@@ -110,12 +102,12 @@ bool file_stat(const char *query_filename, struct stat *metadata)
 // \return true if successful, else false for failure
 bool endianess_converter(uint32_t *src_data, uint32_t *dst_data, const size_t src_count)
 {
-    if (src_data == NULL || dst_data == NULL || src_count == 0) return false;
-    
-    for(size_t i = 0; i < src_count; i++) {
-        // convert the endianess of the current src_data element
+    if (src_data == NULL || dst_data == NULL || src_count == 0)
+        return false;
+
+    for (size_t i = 0; i < src_count; i++)
+    {
         dst_data[i] = __builtin_bswap32(src_data[i]);
     }
     return true;
 }
-

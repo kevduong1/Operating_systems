@@ -1,4 +1,0 @@
-/homes/kevduong/Operating_systems/hw1/arrays/build/CMakeFiles/edit_cache.dir
-/homes/kevduong/Operating_systems/hw1/arrays/build/CMakeFiles/rebuild_cache.dir
-/homes/kevduong/Operating_systems/hw1/arrays/build/CMakeFiles/arrays_test.dir
-/homes/kevduong/Operating_systems/hw1/arrays/build/CMakeFiles/test.dir

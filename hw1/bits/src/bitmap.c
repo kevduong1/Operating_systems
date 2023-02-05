@@ -11,13 +11,14 @@
 ///
 bitmap_t *bitmap_create(size_t n_bits)
 {
-    if(n_bits == 0) return NULL;
+    if (n_bits == 0)
+        return NULL;
 
     bitmap_t *bitmap = malloc(sizeof(bitmap_t));
 
     bitmap->bit_count = n_bits;
-    bitmap->byte_count = (n_bits/8);
-    if(n_bits%8 != 0)
+    bitmap->byte_count = (n_bits / 8);
+    if (n_bits % 8 != 0)
     {
         bitmap->byte_count++;
     }
@@ -33,11 +34,12 @@ bitmap_t *bitmap_create(size_t n_bits)
 ///
 bool bitmap_set(bitmap_t *const bitmap, const size_t bit)
 {
-    if(bitmap == NULL || bit > bitmap->bit_count) return false;
+    if (bitmap == NULL || bit > bitmap->bit_count)
+        return false;
 
     size_t byte_index, bit_index;
-    byte_index = bit/8;
-    bit_index = bit%8;
+    byte_index = bit / 8;
+    bit_index = bit % 8;
     bitmap->data[byte_index] |= 1 << bit_index;
     return true;
 }
@@ -48,10 +50,11 @@ bool bitmap_set(bitmap_t *const bitmap, const size_t bit)
 ///
 bool bitmap_reset(bitmap_t *const bitmap, const size_t bit)
 {
-    if(bitmap == NULL || bit > bitmap->bit_count || bit < 0) return false;
+    if (bitmap == NULL || bit > bitmap->bit_count || bit < 0)
+        return false;
     size_t byte_index, bit_index;
-    byte_index = bit/8;
-    bit_index = bit%8;
+    byte_index = bit / 8;
+    bit_index = bit % 8;
     bitmap->data[byte_index] &= ~(1 << bit_index);
     return true;
 }
@@ -64,27 +67,29 @@ bool bitmap_reset(bitmap_t *const bitmap, const size_t bit)
 ///
 bool bitmap_test(const bitmap_t *const bitmap, const size_t bit)
 {
-    if(bitmap == NULL || bit < 0) return false;
+    if (bitmap == NULL || bit < 0)
+        return false;
     size_t byte_index, bit_index;
-    byte_index = bit/8;
-    bit_index = bit%8;
+    byte_index = bit / 8;
+    bit_index = bit % 8;
     return (bitmap->data[byte_index] >> bit_index) & 1;
-
 }
+
 /// Find the first set bit
 /// \param bitmap The bitmap
 /// \return The first one bit address, SIZE_MAX on error/Not found
 ///
 size_t bitmap_ffs(const bitmap_t *const bitmap)
 {
-    if(bitmap == NULL) return SIZE_MAX;
+    if (bitmap == NULL)
+        return SIZE_MAX;
     size_t byte_index;
 
-    for(size_t bit = 0; bit < bitmap->bit_count; bit++)
+    for (size_t bit = 0; bit < bitmap->bit_count; bit++)
     {
-        byte_index = bit/8;
+        byte_index = bit / 8;
 
-        if(bitmap->data[byte_index] & (1 << (bit % 8)))
+        if (bitmap->data[byte_index] & (1 << (bit % 8)))
         {
             return bit;
         }
@@ -92,17 +97,19 @@ size_t bitmap_ffs(const bitmap_t *const bitmap)
 
     return SIZE_MAX;
 }
+
 /// Find first zero bit
 /// \param bitmap The bitmap
 /// \return The first zero bit address, SIZE_MAX on error/Not found
 ///
 size_t bitmap_ffz(const bitmap_t *const bitmap)
 {
-    if(bitmap == NULL) return SIZE_MAX;
-    for(size_t bit = 0; bit < bitmap->bit_count; bit++)
+    if (bitmap == NULL)
+        return SIZE_MAX;
+    for (size_t bit = 0; bit < bitmap->bit_count; bit++)
     {
         size_t byte_index = bit / 8;
-        if(!(bitmap->data[byte_index] & (1 << (bit % 8))))
+        if (!(bitmap->data[byte_index] & (1 << (bit % 8))))
         {
             return bit;
         }
@@ -110,9 +117,14 @@ size_t bitmap_ffz(const bitmap_t *const bitmap)
     return SIZE_MAX;
 }
 
+/// Destructs and destroys bitmap object
+/// \param bit The bitmap
+/// \return The Success or Failure of destruct and destroy bitmap object
+///
 bool bitmap_destroy(bitmap_t *bitmap)
 {
-    if(bitmap == NULL) return false;
+    if (bitmap == NULL)
+        return false;
 
     free(bitmap->data);
     free(bitmap);

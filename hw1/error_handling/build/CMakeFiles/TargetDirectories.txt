@@ -1,4 +1,0 @@
-/homes/kevduong/Operating_systems/hw1/error_handling/build/CMakeFiles/rebuild_cache.dir
-/homes/kevduong/Operating_systems/hw1/error_handling/build/CMakeFiles/edit_cache.dir
-/homes/kevduong/Operating_systems/hw1/error_handling/build/CMakeFiles/error_handling_test.dir
-/homes/kevduong/Operating_systems/hw1/error_handling/build/CMakeFiles/test.dir

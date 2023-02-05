@@ -1,4 +1,0 @@
-/homes/kevduong/Operating_systems/hw1/bits/build/CMakeFiles/rebuild_cache.dir
-/homes/kevduong/Operating_systems/hw1/bits/build/CMakeFiles/edit_cache.dir
-/homes/kevduong/Operating_systems/hw1/bits/build/CMakeFiles/bitmap_test.dir
-/homes/kevduong/Operating_systems/hw1/bits/build/CMakeFiles/test.dir

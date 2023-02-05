@@ -1,4 +1,0 @@
-/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/rebuild_cache.dir
-/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/edit_cache.dir
-/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/strings_test.dir
-/homes/kevduong/Operating_systems/hw1/strings/build/CMakeFiles/test.dir
