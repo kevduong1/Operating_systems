@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Made this script for personal use, but it runs all the tests after we do the following in this build folder
+# Made this script for personal use, but it runs all the tests after we cmake in this build folder
 # Leaving it here in case it's helpful for grading :)
 # 0. cd into this build folder
 # 1. cmake ..
